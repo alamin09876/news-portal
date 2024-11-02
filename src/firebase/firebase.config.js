@@ -10,9 +10,9 @@ const firebaseConfig = {
   projectId: "news-portal-c6f02",
   storageBucket: "news-portal-c6f02.firebasestorage.app",
   messagingSenderId: "697152721487",
-  appId: "1:697152721487:web:f4f62bf94a98b52ecf903a"
+  appId: "1:697152721487:web:f4f62bf94a98b52ecf903a",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default app.
+export default app;
