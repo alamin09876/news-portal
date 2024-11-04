@@ -1,11 +1,22 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 import Navbar from "../../shared/Navbar/Navbar";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
-    console.log(form);
+    const email = form.get("email");
+    const password = form.get("password");
+    signIn(email, password)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div>
@@ -47,8 +58,8 @@ const Login = () => {
           </div>
         </form>
         <p className="text-center mt-4">
-          Dont’t Have An Account?{" "}
-          <Link to="/register" className="text-blue-600 font-bold">
+          Do not have an account{" "}
+          <Link className="text-blue-600 font-bold" to="/register">
             Register
           </Link>
         </p>

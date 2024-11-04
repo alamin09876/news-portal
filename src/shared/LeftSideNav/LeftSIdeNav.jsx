@@ -9,7 +9,6 @@ const LeftSIdeNav = () => {
       .then((res) => res.json())
       .then((data) => setCategories(data));
   }, []);
-  console.log(categories, "cate");
   return (
     <div className="space-y-6">
       <h2 className="text-2xl">All Caterogy </h2>
